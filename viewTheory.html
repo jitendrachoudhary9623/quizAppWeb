@@ -1,0 +1,438 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quiz App - Admin Module</title>
+  <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/themify-icons.css">
+  <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+  <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+  <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+  <link rel="stylesheet" href="assets/scss/style.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+</head>
+
+<body>
+  <!-- Left Panel -->
+
+  <aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+
+      <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+
+      </div>
+
+      <div id="main-menu" class="main-menu collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="index.html">
+              <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+          </li>
+          <h3 class="menu-title">Operations</h3>
+          <!-- /.menu-title -->
+          <li class="menu-item-has-children dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="menu-icon fa fa-laptop"></i>Theory</a>
+            <ul class="sub-menu children dropdown-menu">
+              <li>
+                <i class="fa fa-edit"></i>
+                <a href="createTheory.html">Create</a>
+              </li>
+              <li>
+                <i class="fa fa-sitemap"></i>
+                <a href="viewTheory.html">View</a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="menu-item-has-children dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="menu-icon fa fa-code"></i>Interview</a>
+            <ul class="sub-menu children dropdown-menu">
+              <li>
+                <i class="fa fa-edit"></i>
+                <a href="createInterview.html">Create</a>
+              </li>
+              <li>
+                <i class="fa fa-sitemap"></i>
+                <a href="viewInterview.html">View</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="menu-item-has-children dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="menu-icon fa fa-free-code-camp"></i>Programs</a>
+            <ul class="sub-menu children dropdown-menu">
+              <li>
+                <i class="fa fa-edit"></i>
+                <a href="createProgram.html">Create</a>
+              </li>
+              <li>
+                <i class="fa fa-sitemap"></i>
+                <a href="viewProgram.html">View</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="menu-item-has-children dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="menu-icon fa fa-certificate"></i>Quiz</a>
+            <ul class="sub-menu children dropdown-menu">
+              <li>
+                <i class="fa fa-edit"></i>
+                <a href="createQuiz.html">Create</a>
+              </li>
+              <li>
+                <i class="fa fa-sitemap"></i>
+                <a href="viewQuiz.html">View</a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+  </aside>
+
+  <div id="right-panel" class="right-panel">
+    <header id="header" class="header">
+      <div class="header-menu">
+        <div class="col-sm-7">
+          <a id="menuToggle" class="menutoggle pull-left">
+            <i class="fa fa fa-tasks"></i>
+          </a>
+          <div class="header-left"></div>
+        </div>
+
+        <div class="col-sm-5">
+          <div class="user-area dropdown float-right">
+          </div>
+          <div class="language-select dropdown" id="language-select"></div>
+        </div>
+      </div>
+
+    </header>
+
+    <div class="breadcrumbs">
+      <div class="col-sm-4">
+        <div class="page-header float-left">
+          <div class="page-title">
+            <h1>Dashboard</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="page-header float-right">
+          <div class="page-title">
+            <ol class="breadcrumb text-right">
+              <li>
+                <a href="#">Interview</a>
+              </li>
+
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content mt-3">
+      <div class="animated fadeIn" id="holder">
+        <table class="table table-striped table-bordered" v-for="(loans,index) in json" style="color:white;background-color:rgb(48, 44, 44);">
+
+          <tr>
+            <td>{{loans.section_id}}</td>
+            <td>{{loans.section_title}}</td>
+            <td>
+              <button class="btn btn-primary" v-on:click="removeSection(loans)">Remove</button>
+            </td>
+
+          </tr>
+          <tr v-for="(sub,index1) in loans.subsections" style="background-color:tomato">
+            <td>{{sub.id}}</td>
+            <td>{{sub.title}}</td>
+            <td>{{sub.detail}}</td>
+            <td>
+              <button class="btn btn-danger" v-on:click="removeSubSection(sub)">Remove</button>
+            </td>
+            <td>
+              <button class="btn btn-success" v-on:click="updateTheory(sub)">Update</button>
+
+            </td>
+
+          </tr>
+
+        </table>
+
+      </div>
+
+
+    </div>
+  </div>
+  <!-- .animated -->
+  </div>
+  <!-- .content -->
+
+  <!-- .content -->
+
+
+  </div>
+  <!-- /#right-panel -->
+
+  <!-- Right Panel -->
+
+
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/plugins.js"></script>
+
+  <script src="assets/js/main.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js "></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script>
+    if (typeof $ == 'undefined') {
+      var $ = jQuery;
+    }
+
+
+    var app = new Vue({
+      el: '#holder',
+      data: {
+        json: [],
+        showModal: false
+      },
+      mounted() { // when the Vue app is booted up, this is run automatically.
+        var self = this // create a closure to access component in the callback below
+        $.getJSON("php/GetTheory.php", function (data) {
+          self.json = data;
+        });
+      },
+      methods: {
+        removeSection: function (index) {
+          deleteS(index.section_id);
+          getData();
+
+        },
+        removeSubSection: function (index) {
+          console.log(index.id);
+          deleteSubsection(index.id);
+          getData();
+        },
+        updateTheory: function (index) {
+          var id = index.id;
+          var dialog = bootbox.dialog({
+            title: 'update',
+            message: `
+                        <p>Update the program</p>
+                        <p>Old Title</p>
+                        <textarea rows='2' cols="48" id="update_theory_title" name="update_program">`+ index.title + `
+                        </textarea>
+                        <p>Old detail</p>
+                        <textarea rows='3' cols="48" id="update_theory_detail" name="update_program">`+ index.detail + `
+                        </textarea>
+                       
+    `,
+            buttons: {
+              cancel: {
+                label: "Update",
+                className: 'btn-danger',
+                callback: function () {
+                  //  Example.show('Custom cancel clicked');
+                  var title = document.getElementById('update_theory_title').value;
+                  var detail = document.getElementById('update_theory_detail').value;
+                  update(id, title, detail)
+                  //   alert(code);
+                  // update(id,statement,code,op);
+                }
+              }
+            }
+          });
+        }
+      }
+    });
+
+    function update(id, title, detail) {
+      //alert(id);
+      var bool;
+      $.ajax({
+        type: "POST",
+        url: "php/provider.php",
+        data: { 'id': id, 'type': 3, 'title': title, 'detail': detail },
+        dataType: "JSON",
+        success: function (data) {
+          //   $("#result").html("Data Inserted").addClass("w3-green").css("padding", "8%");
+          /*   if (data.Section.status == 'Error occured') {
+               alert('A Section needs to be empty fpor its deletion');
+             }*/
+          alert("Updated")
+          bool = true;
+
+        },
+        error: function (err) {
+          alert('not works');
+          bool = false;
+          // $("#result").html("Error occured " + err).addClass("w3-red").css("padding", "8%");;
+        }
+      });
+
+      getData();
+    }
+
+    function getData() {
+      var self = this // create a closure to access component in the callback below
+      $.getJSON("php/GetTheory.php", function (data) {
+        app.json = data;
+      });
+    }
+    function deleteS(id) {
+      var bool;
+      $.ajax({
+        type: "POST",
+        url: "php/provider.php",
+        data: { 'id': id, 'type': 4 },
+        dataType: "JSON",
+        success: function (data) {
+          //   $("#result").html("Data Inserted").addClass("w3-green").css("padding", "8%");
+          if (data.Section.status == 'Error occured') {
+            alert('A Section needs to be empty fpor its deletion');
+          }
+          bool = true;
+
+        },
+        error: function (err) {
+          alert('not works');
+          bool = false;
+          // $("#result").html("Error occured " + err).addClass("w3-red").css("padding", "8%");;
+        }
+      });
+      return bool;
+    }
+
+    function deleteSubsection(id) {
+      console.log(id);
+      var bool;
+      $.ajax({
+        type: "POST",
+        url: "php/provider.php",
+        data: { 'id': id, 'type': 7 },
+        dataType: "JSON",
+        success: function (data) {
+          //   $("#result").html("Data Inserted").addClass("w3-green").css("padding", "8%");
+          bool = true;
+
+        },
+        error: function (err) {
+          alert('not works');
+          bool = false;
+          // $("#result").html("Error occured " + err).addClass("w3-red").css("padding", "8%");;
+        }
+      });
+      return bool;
+    }
+
+    function updateSub(name) {
+
+      name1 = $("update_sub_title").val();
+      alert('Update' + name);
+    }
+
+
+  </script>
+
+
+
+  <style>
+    .modal-mask {
+      position: fixed;
+      z-index: 9998;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .5);
+      display: table;
+      transition: opacity .3s ease;
+    }
+
+    .modal-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .modal-container {
+      width: 300px;
+      margin: 0px auto;
+      padding: 20px 30px;
+      background-color: #fff;
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+      transition: all .3s ease;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .modal-header h3 {
+      margin-top: 0;
+      color: #42b983;
+    }
+
+    .modal-body {
+      margin: 20px 0;
+      color: #42b983;
+    }
+
+    .modal-default-button {
+      float: right;
+    }
+
+    /*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+    .modal-enter {
+      opacity: 0;
+    }
+
+    .modal-leave-active {
+      opacity: 0;
+    }
+
+    .modal-enter .modal-container,
+    .modal-leave-active .modal-container {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  </style>
+</body>
+
+</html>
