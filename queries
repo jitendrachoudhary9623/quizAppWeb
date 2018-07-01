@@ -1,0 +1,32 @@
+//This is for theory section
+
+ create table section ( section_id Integer PRIMARY KEY AUTO_INCREMENT , section_title varchar(255));
+
+ create table subsection (section_id Integer,subsection_id Double PRIMARY KEY AUTO_INCREMENT , subsection_title varchar(255),subsection_detail text , FOREIGN KEY (section_id) References section(section_id));
+
+
+//No need to execute this , this is just for example
+insert into section values (1,"Introduction to java"); 
+
+insert into subsection values (1,1.1,'What is java?','Java is an object oriented language');      
+
+//Select query just for example
+select section.section_id,section.section_title,subsection.subsection_id,subsection.subsection_title,subsection.subsection_detail from subsection  inner join section on section.section_id=subsection.section_id AND subsection.section_id=1;
+
+
+//For programs
+create table program (program_id int primary key auto_increment not null , program_statement text,program_code text,program_output text);
+
+
+//For Interview
+
+create table interview (interview_id int primary key not null auto_increment , interview_type int , interview_question text , interview_answer text );
+
+
+//For interview there are two types one is technical questions and another is non technical question for tech interview_type = 2 and 1 for others
+
+//For Quiz
+
+create table category (category_id int primary key not null auto_increment , category_name varchar(255));
+
+create table quiz (quiz_id double primary key not null auto_increment,category_id int,question varchar(255),optionA varchar(255),optionB varchar(255),optionC varchar(255),optionD varchar(255),correct_ans varchar(5),FOREIGN KEY (category_id) References category(category_id));

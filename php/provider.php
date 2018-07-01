@@ -79,7 +79,46 @@
        echo $userObject->updateInterview($id,$interview_type,$interview_question,$interview_answer);
        break;
 
+       case 12:
+        $name=$_POST['name'];
+        echo $userObject->createCategory($name);
+       break;
 
+       case 13:
+$category_id=$_POST['category_id'];
+$quiz_id=$_POST['quiz_id'];
+$question=$_POST['question'];
+$optionA=$_POST['optionA'];
+$optionB=$_POST['optionB'];
+$optionC=$_POST['optionC'];
+$optionD=$_POST['optionD'];
+$ans=$_POST['ans'];
+echo $userObject->createQuiz($category_id,$quiz_id,$question,$optionA,$optionB,$optionC,$optionD,$ans);
+       break;
+
+       case 14:
+       $id=$_POST['id'];
+       echo $userObject->deleteCategory($id);
+        break;
+
+        case 15:
+        $id=$_POST['id'];
+        echo $userObject->deleteQuiz($id);
+         break;
+
+         case 16:
+        // $category_id=$_POST['category_id'];
+         $quiz_id=$_POST['id'];
+         $question=$_POST['question'];
+         $optionA=$_POST['a'];
+         $optionB=$_POST['b'];
+         $optionC=$_POST['c'];
+         $optionD=$_POST['d'];
+         $ans=$_POST['ans'];
+
+         echo $userObject->updateQuiz($quiz_id,$question,$optionA,$optionB,$optionC,$optionD,$ans);
+
+         break;
    }
 
   //$json_array2 = $userObject->getInterview();

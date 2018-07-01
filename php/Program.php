@@ -72,6 +72,33 @@
            ]]);} 
         }
 
+
+        public function createCategory($category_name){
+            $query="insert into category (category_name) values ('$category_name');";
+            if (mysqli_query($this->db->getDb(), $query)) {
+                return json_encode(['Section' => [
+                    'status'=>'Data Inserted Successfully'
+                ]]);
+           } else {
+               return json_encode(['Section' => [
+                   'query'=>$query,
+                   'status'=>'Error occured'
+           ]]);}
+
+        }
+
+        public function createQuiz($category_id,$quiz_id,$question,$optionA,$optionB,$optionC,$optionD,$ans){
+            $query="insert into quiz values ($quiz_id,$category_id,'$question','$optionA','$optionB','$optionC','$optionD','$ans');";
+            if (mysqli_query($this->db->getDb(), $query)) {
+                return json_encode(['Sub_Section' => [
+                    'status'=>'Data Inserted Successfully'
+                ]]);
+           } else {
+               return json_encode(['Sub_Section' => [
+                   'query'=>$query,
+                   'status'=>'Error occured'
+           ]]);} 
+        }
     //update
     public function updateInterview($id,$interview_type,$interview_question,$interview_answer){
         
@@ -102,6 +129,18 @@
        ]]);} 
     }
 
+    public function updateQuiz($quiz_id,$question,$optionA,$optionB,$optionC,$optionD,$ans){
+        $query="update quiz set question='$question',optionA='$optionA',optionB='$optionB',optionC='$optionC',optionD='$optionD',correct_ans='$ans' where quiz_id = $quiz_id ;";
+        if (mysqli_query($this->db->getDb(), $query)) {
+            return json_encode(['Quiz' => [
+                'status'=>'Data Updated Successfully'
+            ]]);
+       } else {
+           return json_encode(['Quiz' => [
+               'query'=>$query,
+               'status'=>'Error occured'
+       ]]);}  
+    }
 
     public function updateSection($id,$section_title){
         $query="update program set section_title='$section_title' where section_id = $id ;";
@@ -204,6 +243,32 @@
        ]]);} 
           
     }
+
+    public function deleteCategory($id){
+        $query="delete from category where category_id = $id ;";
+        if (mysqli_query($this->db->getDb(), $query)) {
+            return json_encode(['Category' => [
+                'status'=>'Data Deleted Successfully'
+            ]]);
+       } else {
+           return json_encode(['Category' => [
+               'query'=>$query,
+               'status'=>'Error occured'
+       ]]);} 
+    }
+
+    public function deleteQuiz($id){
+        $query="delete from quiz where quiz_id = $id ;";
+        if (mysqli_query($this->db->getDb(), $query)) {
+            return json_encode(['Category' => [
+                'status'=>'Data Deleted Successfully'
+            ]]);
+       } else {
+           return json_encode(['Category' => [
+               'query'=>$query,
+               'status'=>'Error occured'
+       ]]);} 
+    }
       //Read Commands
         
         public function getPrograms(){
@@ -245,10 +310,50 @@
            }
            //$jsonData=json_encode($json_response,JSON_PRETTY_PRINT);
            return $json_response;
-        }
+            }
 
        
-    }
+        }
+
+    public function getQuiz(){
+        
+        $query="select * from category;";
+        $json_response=array();
+        $row_array=array();
+        $subsection_array=array();
+
+         if( $result = mysqli_query($this->db->getDb(), $query)){
+             while($row=mysqli_fetch_assoc($result)){
+              
+              $row_array['category_id']=$row['category_id'];
+              $row_array['category_name']=$row['category_name'];
+              $row_array['quiz']=array();
+              $id=$row['category_id'];
+              $subsection_query="select * from quiz where category_id=$id";
+              $subsection_result=mysqli_query($this->db->getDb(), $subsection_query);
+              while($subsection_row=mysqli_fetch_assoc($subsection_result))
+              {
+                 // $subsection_array['title']=$subsection_row['subsection_title']; 
+                  $subsection_array['id']=$subsection_row['quiz_id']; 
+                  $subsection_array['question']=$subsection_row['question']; 
+                  $subsection_array['optionA']=$subsection_row['optionA']; 
+                  $subsection_array['optionB']=$subsection_row['optionB']; 
+                  $subsection_array['optionC']=$subsection_row['optionC']; 
+                  $subsection_array['optionD']=$subsection_row['optionD']; 
+                  $subsection_array['ans']=$subsection_row['correct_ans']; 
+
+               //   $subsection_array['detail']=$subsection_row['subsection_detail'];
+                  array_push($row_array['quiz'],$subsection_array); 
+
+              }
+              array_push($json_response,$row_array);
+         }
+         //$jsonData=json_encode($json_response,JSON_PRETTY_PRINT);
+         return $json_response;
+      }
+
+     
+  }
     public function getInterview(){
      
         $query = "select * from interview ";

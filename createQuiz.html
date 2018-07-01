@@ -1,0 +1,414 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Quiz App - Admin Module</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="assets/scss/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+</head>
+
+<body>
+    <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    </li>
+                    <h3 class="menu-title">Operations</h3>
+                    <!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="menu-icon fa fa-laptop"></i>Theory</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <i class="fa fa-edit"></i>
+                                <a href="createTheory.html">Create</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-sitemap"></i>
+                                <a href="viewTheory.html">View</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="menu-icon fa fa-code"></i>Interview</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <i class="fa fa-edit"></i>
+                                <a href="createInterview.html">Create</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-sitemap"></i>
+                                <a href="viewInterview.html">View</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="menu-icon fa fa-free-code-camp"></i>Programs</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <i class="fa fa-edit"></i>
+                                <a href="createProgram.html">Create</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-sitemap"></i>
+                                <a href="viewProgram.html">View</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="menu-icon fa fa-certificate"></i>Quiz</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <i class="fa fa-edit"></i>
+                                <a href="createQuiz.html">Create</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-sitemap"></i>
+                                <a href="viewQuiz.html">View</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+
+    <div id="right-panel" class="right-panel">
+        <header id="header" class="header">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left">
+                        <i class="fa fa fa-tasks"></i>
+                    </a>
+                    <div class="header-left"></div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                    </div>
+                    <div class="language-select dropdown" id="language-select"></div>
+                </div>
+            </div>
+
+        </header>
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Quiz</strong> Elements
+                            </div>
+                            <div class="card-body card-block">
+                                <form id="frm" class="form-horizontal">
+                                    <div class="row form-group">
+
+                                        <div class="col-12 col-md-9">
+                                            <p class="form-control-static">Category</p>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Category Name</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="category_name" name="text-input" placeholder="Enter Category Name" class="form-control">
+                                            <small class="form-text text-muted">Enter Category to enter in the database</small>
+                                        </div>
+                                    </div>
+
+                                    <div id="output">
+
+                                    </div>
+
+                                </form>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary btn-sm" id="category_submit">
+                                        <i class="fa fa-dot-circle-o"></i> Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-ban"></i> Reset
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <div class="card-body card-block">
+                                <form id="frm1" class="form-horizontal">
+                                    <div class="row form-group">
+
+                                        <div class="col-12 col-md-9">
+                                            <p class="form-control-static">Quiz Section</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Category Number</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <small class="form-text text-muted">Enter category no</small>
+
+                                            <input type="text" id="category_no" name="text-input" placeholder="Enter Category No" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Quiz Number</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <small class="form-text text-muted">Enter quiz no ( category no . quiz no )</small>
+
+                                            <input type="text" id="quiz_no" name="text-input" placeholder="Enter quiz No" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Question</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <small class="form-text text-muted">Enter Question</small>
+
+                                            <input type="text" id="question" name="text-input" placeholder="Enter Question" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Option A</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <small class="form-text text-muted">Enter Option A</small>
+
+                                            <input type="text" id="optionA" name="text-input" placeholder="Enter Option A" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Option B</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <small class="form-text text-muted">Enter Option B</small>
+
+                                            <input type="text" id="optionB" name="text-input" placeholder="Enter Option B" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Option C</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <small class="form-text text-muted">Enter Option C</small>
+
+                                            <input type="text" id="optionC" name="text-input" placeholder="Enter Option C" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Option D</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <small class="form-text text-muted">Enter Option D</small>
+
+                                            <input type="text" id="optionD" name="text-input" placeholder="Enter Option D" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Answer</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <small class="form-text text-muted">Correct Answer</small>
+
+                                            <input type="text" id="ans" name="text-input" placeholder="Enter Correct Answer" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div id="output1">
+
+                                    </div>
+
+                                </form>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary btn-sm" id="quiz_submit">
+                                        <i class="fa fa-dot-circle-o"></i> Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-ban"></i> Reset
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- .animated -->
+        </div>
+        <!-- .content -->
+
+
+    </div>
+    <!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        if (typeof $ == 'undefined') {
+            var $ = jQuery;
+        }
+        $(document).ready(function () {
+
+
+            var frm = $('#frm');
+            var frm1 = $("#frm1");
+            frm1.submit(function (e) {
+
+                e.preventDefault();
+            });
+            frm.submit(function (e) {
+
+                e.preventDefault();
+            });
+            $("#category_submit").click(function () {
+
+                var title = $("#category_name").val();
+
+                var type;
+                $.ajax({
+                    type: "POST",
+                    url: "php/provider.php",
+                    data: { 'name': title, 'type': 12 },
+                    dataType: "JSON",
+                    success: function (data) {
+                        $("#output").append(data.Section.status).addClass("alert alert-success");
+                        // alert('Data inserted');
+                    },
+                    error: function (err) {
+                        $("#output").append(data.Section.status).addClass("alert alert-error");
+
+
+                    }
+                });
+                //getData();
+
+            });
+            $("#quiz_submit").click(function () {
+
+                var category_no=$("#category_no").val();
+                var quiz_no=$("#quiz_no").val();
+                var question=$("#question").val();
+                var optionA=$("#optionA").val();
+                var optionB=$("#optionB").val();
+                var optionC=$("#optionC").val();
+                var optionD=$("#optionD").val();
+                var ans=$("#ans").val();
+                alert(quiz_no);
+                $.ajax({
+                    type: "POST",
+                    url: "php/provider.php",
+                    data: {  'type': 13, 'category_id':category_no,'quiz_id':quiz_no,'question':question,'optionA':optionA,'optionB':optionB,'optionC':optionC,'optionD':optionD,'ans':ans },
+                    dataType: "JSON",
+                    success: function (data) {
+                        $("#output1").append("Inserted").addClass("alert alert-success");
+                        // alert('Data inserted');
+                    },
+                    error: function (err) {
+                        $("#output1").append("Failed").addClass("alert alert-error");
+
+
+                    }
+                });
+                //getData();
+
+            });
+
+
+
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
